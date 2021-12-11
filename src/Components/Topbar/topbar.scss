@@ -1,0 +1,79 @@
+@import '../../globals.scss';
+.topbar{
+    background-color: $mainColour2;
+    color: $mainColour;
+    width: 100%;
+    height: var(--topbar-width);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    display: grid;
+    align-items: center;
+    transition: all 1s ease;
+    
+    .wrapper {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        justify-content: space-between;
+        .left {
+            display: flex;
+            align-items: center;
+            .logo{
+                text-decoration: none;
+                color: inherit;
+                font-size: 30px;
+                font-weight: 700;
+            }
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+                span {
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+            }
+        }
+        .right {
+            height: 40px;
+            .sandwich{
+                width: 30px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                justify-content: space-between;
+                margin-right: 10px;
+                overflow-y: hidden;
+                span{
+                    transform-origin: left;
+                    transition: all 2s ease;
+                    
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColour;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: $mainColour;
+        color: $mainColour2;
+        .sandwich{
+            span{
+                &:first-child{
+                    background-color: $mainColour2;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: $mainColour2;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.introduction{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    .left{
+        flex: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        .imgContainer{
+            margin-top: 10vh;
+            position: relative;
+            left: -12%;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            border-radius: 50% 50% 50% 0%;
+            overflow: inherit;
+            display: flex;
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+            justify-content: center;
+            animation: appear 2s;
+            
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    }
+    .right{
+        background-color: white;
+        flex:50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding: 10% 1% 1% 1%;
+        h1{
+            font-family: 'Indie Flower', cursive;
+            font-size: 60px;
+            margin-bottom: 30px;
+            animation: slide-up 1s;
+            overflow: hidden;
+        }
+        p{
+            font-size: 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            animation: appear 1s;
+        }
+        @keyframes slide-up {
+            from {
+                margin-top: 10%;
+                opacity: 0;
+            }
+            to {
+                margin-top: 0%;
+                opacity: 1;
+            }
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .imgContainer{
+            display: flex;
+            position: relative;
+            top: 20%;
+            justify-content: center;
+            a{
+
+                img{
+                    width: 50px;
+                    height: 40px;
+                    animation: blink 2s infinite;
+                }
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    50% { opacity: 1; }
+                    100% { opacity: 0; }
+                }
+            }
+            
+        }
+        
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 720px) {
+    .introduction{
+        flex: auto;
+        flex-direction: column;
+        .left{
+            flex: 100%;
+            .imgContainer{
+                margin-top: 3vw;
+                left: 0%;
+                border-radius: 50% 50% 50% 50%;
+                width: 80%;
+            }
+        }
+        .right{
+            flex: 100%;
+            h1{
+                font-size: 40px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}

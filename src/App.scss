@@ -1,0 +1,24 @@
+@import './globals.scss';
+
+.app{
+    height: 100vh;
+    
+    .sections{
+        width: 100%;
+        height: calc(100vh - var(--topbar-width));
+        background-color: lightsteelblue;
+        position: relative;
+        top: var(--topbar-width);
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        > *{
+            height: calc(100vh - var(--topbar-width));
+            width: 100vw;
+            scroll-snap-align: start;
+        }
+    }
+}
